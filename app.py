@@ -7,7 +7,7 @@ def home():
     return '''
     <html>
         <head>
-            <title>Jahanzaib Khan- Cloud Enthusiast</title>
+            <title> Jahanzaib Khan- Cloud Enthusiast </title>
             <style>
                 body {
                     background: linear-gradient(to right, #00c6ff, #0072ff);
