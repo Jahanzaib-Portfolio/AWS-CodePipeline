@@ -7,7 +7,7 @@ This repository contains the documentation and implementation details for the **
 ## 1. CI/CD Architecture Overview
 The core automation flow integrates a central version control repository with pipeline actions that trigger a sequence of checkouts, unit testing (UT), security scanning, container image building, and pushing artifacts to a remote registry.
 
-![CI/CD Pipeline Sequence Flow](images/image1)
+![CI/CD Pipeline Sequence Flow](images/image1.png)
 
 ---
 
@@ -16,7 +16,7 @@ The core automation flow integrates a central version control repository with pi
 2. From the side navigation pane, click on **Build projects**.
 3. Click the orange **Create project** button on the main control panel.
 
-![AWS CodeBuild Dashboard Panel](images/image2)
+![AWS CodeBuild Dashboard Panel](images/image2.png)
 
 ---
 
@@ -24,7 +24,7 @@ The core automation flow integrates a central version control repository with pi
 1. **Project name:** Enter a descriptive workspace name (e.g., `Python-Project`).
 2. **Project type:** Choose **Default project** to execute standard customizable container build instructions.
 
-![Project Configuration Panel](images/image3)
+![Project Configuration Panel](images/image3.png)
 
 ---
 
@@ -33,7 +33,7 @@ The core automation flow integrates a central version control repository with pi
 2. Under the Repository scope, toggle the selection to **Public repository** (or authorize your direct GitHub account profile).
 3. Input the destination tracking repository URL: `https://github.com/Jahanzaib-Portfolio/AWS-CodePipeline.git`.
 
-![Source Configuration Settings](images/image4)
+![Source Configuration Settings](images/image4.png)
 
 ---
 
@@ -43,12 +43,12 @@ The core automation flow integrates a central version control repository with pi
 3. **Compute:** Set the execution platform configuration to **EC2** optimization layers.
 4. **Running mode:** Choose **Instance** to run your compilation parameters directly on the allocated system host.
 
-![Environment Settings Configurations](images/image5)
+![Environment Settings Configurations](images/image5.png)
 
 5. **Operating system:** Choose **Amazon Linux** from the dropdown selection map.
 6. **Service role:** Select **New service role** and confirm the auto-filled workspace role name (`Python-Project-service-role-for-CodePipeline`). This role gives the build pipeline the IAM permissions it needs to manage logging actions.
 
-![OS and Service Role Specifications](images/image6)
+![OS and Service Role Specifications](images/image6.png)
 
 ---
 
@@ -57,7 +57,7 @@ The core automation flow integrates a central version control repository with pi
 2. Under Build specifications, select the **Insert build commands** radio option to provide inline YAML build recipes.
 3. Click **Switch to editor** and insert your instructions mapping parameter stores, environment runtime criteria, pre-build installations (`pip install -r requirements.txt`), and automated script validation hooks.
 
-![Buildspec Embedded Code Editor Console](images/image7)
+![Buildspec Embedded Code Editor Console](images/image7.png)
 
 ---
 
@@ -65,13 +65,13 @@ The core automation flow integrates a central version control repository with pi
 1. Click **Create build project** at the bottom of the configuration panel.
 2. Once the project dashboard builds completely, click **Start build** to run the initial testing loop.
 
-![Initiating CodeBuild Action Sequences](images/image8)
+![Initiating CodeBuild Action Sequences](images/image8.png)
 
 3. Monitor live standard execution outputs and state changes under the **Build log** tab.
 
-![Reviewing Early Phase Integration Streams](images/image9)
-![System Environment Variables Mapping Interface](images/image10)
-![Tracking Core Compilation Phase Transitions](images/image11)
+![Reviewing Early Phase Integration Streams](images/image9.png)
+![System Environment Variables Mapping Interface](images/image10.png)
+![Tracking Core Compilation Phase Transitions](images/image11.png)
 
 ---
 
@@ -79,11 +79,11 @@ The core automation flow integrates a central version control repository with pi
 1. The pipeline will transition through status checks including `SUBMITTED`, `PROVISIONING`, `DOWNLOAD_SOURCE`, `INSTALL`, `PRE_BUILD`, `BUILD`, and `POST_BUILD`.
 2. Confirm that all build phase steps display a green **Succeeded** checkmark.
 
-![Phase History Success Matrix Tracking](images/image12)
-![Consolidated Build Job Overview Metrics](images/image13)
-![Complete Pipeline Phase Duration Analysis Dashboard](images/image14)
-![Verifying Successful Build Execution Logs](images/image15)
-![Build Success Summary Status Window](images/image16)
+![Phase History Success Matrix Tracking](images/image12.png)
+![Consolidated Build Job Overview Metrics](images/image13.png)
+![Complete Pipeline Phase Duration Analysis Dashboard](images/image14.png)
+![Verifying Successful Build Execution Logs](images/image15.png)
+![Build Success Summary Status Window](images/image16.png)
 
 # AWS CodePipeline - Deployment Phase (Continuous Deployment)
 
@@ -95,7 +95,7 @@ In this phase, we configure **AWS CodeDeploy** to automatically deploy applicati
 
 The deployment workflow integrates source control, build automation, and deployment services to deliver application updates directly to EC2 instances.
 
-![Continuous Deployment Architecture](images/image001)
+![Continuous Deployment Architecture](images/image001.png)
 
 ---
 
@@ -109,7 +109,7 @@ The deployment workflow integrates source control, build automation, and deploym
    - HTTPS (Port 443)
 4. Verify that the instance is running and accessible through SSH.
 
-![EC2 Instance Setup](images/image002)
+![EC2 Instance Setup](images/image002.png)
 
 ---
 
@@ -131,7 +131,7 @@ wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
 4. Install the CodeDeploy agent on the EC2 instance.
 5. Verify that the agent service is running successfully.
 
-![CodeDeploy Agent Installation](images/image003)
+![CodeDeploy Agent Installation](images/image003.png)
 
 ### Important Note
 
@@ -148,7 +148,7 @@ The S3 bucket URL differs depending on the AWS Region. Refer to the AWS document
 3. Attach the IAM role to the EC2 instance.
 4. Confirm that the permissions are correctly applied.
 
-![EC2 IAM Role Configuration](images/image004)
+![EC2 IAM Role Configuration](images/image004.png)
 
 ---
 
@@ -170,7 +170,7 @@ sudo service codedeploy-agent status
 
 3. Ensure the agent status displays **Running**.
 
-![Agent Service Verification](images/image005)
+![Agent Service Verification](images/image005.png)
 
 ---
 
@@ -183,7 +183,7 @@ sudo service codedeploy-agent status
 5. Attach the required AWS-managed policies.
 6. Complete role creation and save the role name.
 
-![CodeDeploy Service Role Creation](images/image006)
+![CodeDeploy Service Role Creation](images/image006.png)
 
 ---
 
@@ -196,7 +196,7 @@ sudo service codedeploy-agent status
 5. Select **EC2/On-Premises** as the compute platform.
 6. Create the application.
 
-![CodeDeploy Application Configuration](images/image007)
+![CodeDeploy Application Configuration](images/image007.png)
 
 ---
 
@@ -209,7 +209,7 @@ sudo service codedeploy-agent status
 5. Configure deployment targets using EC2 tags.
 6. Save the deployment group configuration.
 
-![Deployment Group Configuration](images/image008)
+![Deployment Group Configuration](images/image008.png)
 
 ---
 
@@ -220,7 +220,7 @@ sudo service codedeploy-agent status
 3. Create a tag that identifies the deployment target.
 4. Use the same tag key and value inside the Deployment Group configuration.
 
-![EC2 Tag Configuration](images/image009)
+![EC2 Tag Configuration](images/image009.png)
 
 ### Important Note
 
@@ -248,7 +248,7 @@ files:
     destination: /var/www/html
 ```
 
-![AppSpec File Configuration](images/image0010)
+![AppSpec File Configuration](images/image0010.png)
 
 ### Important Note
 
@@ -271,7 +271,7 @@ Deployment will fail if the `appspec.yml` file:
    - Deployment Group
 6. Save the pipeline configuration.
 
-![Pipeline Deployment Stage Configuration](images/image0011)
+![Pipeline Deployment Stage Configuration](images/image0011.png)
 
 ---
 
@@ -285,7 +285,7 @@ Deployment will fail if the `appspec.yml` file:
    - CodeDeploy
    - EC2 Instance
 
-![Pipeline Execution Progress](images/image0012)
+![Pipeline Execution Progress](images/image0012.png)
 
 ---
 
@@ -302,7 +302,7 @@ Deployment will fail if the `appspec.yml` file:
    - ValidateService
 4. Confirm that all deployment phases complete successfully.
 
-![Deployment Status Monitoring](images/image0013)
+![Deployment Status Monitoring](images/image0013.png)
 
 ---
 
@@ -318,7 +318,7 @@ http://<EC2-Public-IP>
 
 4. Verify that the deployed application loads successfully.
 
-![Deployment Verification](images/image0014)
+![Deployment Verification](images/image0014.png)
 
 ### Important Note
 
@@ -355,8 +355,12 @@ Possible Cause:
 - Application files were not packaged correctly.
 - Deployment instructions are invalid.
 
-![Deployment Troubleshooting Dashboard](images/image0015)
-
+![Deployment Troubleshooting Dashboard](images/image0015.png)
+![Deployment Troubleshooting Dashboard](images/image0016.png)
+![Deployment Troubleshooting Dashboard](images/image0017.png)
+![Deployment Troubleshooting Dashboard](images/image0018.png)
+![Deployment Troubleshooting Dashboard](images/image0019.png)
+![Deployment Troubleshooting Dashboard](images/image0020.png)
 ---
 
 ## 16. Learning Outcomes
